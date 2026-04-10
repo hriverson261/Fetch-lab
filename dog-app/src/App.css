@@ -1,0 +1,91 @@
+
+.app {
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+  background-color: #fffaf5;
+}
+
+.app::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  background-size: 80px;
+  opacity: 0.08; /* Makes the paws subtle */
+  transform: rotate(-15deg); /* Adds a playful angle */
+  z-index: 0;
+}
+
+.app > * {
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #5a3e36;
+  margin-bottom: 1rem;
+}
+
+.counter {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #7a5c50;
+}
+
+button {
+  background-color: #ff914d;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  margin: 0.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff7a26;
+  transform: translateY(-2px);
+}
+
+.fact-card {
+  background: white;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.fact {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.save-btn {
+  background-color: #6c63ff;
+}
+
+.save-btn:hover {
+  background-color: #574fd6;
+}
+
+.saved-facts-section {
+  margin-top: 2rem;
+}
+
+.saved-fact {
+  background: #ffffff;
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
