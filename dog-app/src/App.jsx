@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 
+// Main App start
 const App = () => {
   const [fact, setFact] = useState(null);
   const [loading, setLoading] = useState(false);
