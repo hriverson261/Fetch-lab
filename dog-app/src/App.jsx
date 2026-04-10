@@ -22,24 +22,57 @@ const App = () => {
       setLoading(false); 
     };
 
+    const saveFact = () => {
+      if (!fact) return;
 
+      const exists = savedFacts.some(
+        (saved) => saved.id === fact.id);
+        
+      if (exists) {
+        setSavedFacts([...savedFacts, facts])
+
+      };
+    };
+    
+  useEffect(() => {
+    fetchFact();
+  }, []);
 
   return (
-      <div className="app">
-      <h1>Data App</h1>
+    <div className="app">
+      <h1>Dog App</h1>
 
-       
+      <p className="counter">Dog Facts viewed: {factCount}</p>
 
-      {loading && <p>Loading Data...</p>}
+      <button onClick={fetchFact}>Get Fact</button>
 
-      {Data && !loading && (
-        <div className="data-card">
+      {loading && <p>Loading fact...</p>}
 
+      {fact && !loading && (
+        <div className="fact-card">
+          <p className="fact">{fact.fact}</p>
+
+          <button className="save-btn" onClick={saveFact}>
+            Save Fact
+          </button>
+        </div>
+      )}
+
+      {savedFacts.length > 0 && (
+        <div className="saved-facts-section">
+          <h2>Saved Facts</h2>
+
+          {savedFacts.map((f, index) => (
+            <div key={index} className="saved-fact">
+              <p className="fact">{f.fact}</p>
+            </div>
+          ))}
         </div>
       )}
     </div>
   );
 };
+
 
 export default App;
 
