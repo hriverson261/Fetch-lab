@@ -15,11 +15,11 @@ const App = () => {
     const fetchData = async () => {
       setLoading(true);
 
-      const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+      const response = await fetch("https://api.sykes.pet/fact");
 
       const data = await response.json();
 
-      setData(data);
+      setFact(data);
       setLoading(false);  
 
       useEffect(() => {
