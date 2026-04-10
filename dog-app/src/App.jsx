@@ -1,6 +1,3 @@
-//  "https://www.thesportsdb.com/free_sports_api" - 
-// this is the sports api I'm going to use for my app 
-// src/components/ApiData.jsx
 import React, { useEffect, useState } from "react";
 import "./App.css";
 
@@ -11,22 +8,21 @@ const App = () => {
   const [factCount, setFactCount] = useState(0);
   const [savedFacts, setSavedFacts] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
+  const fetchFact = async () => {
       setLoading(true);
 
-      const response = await fetch("https://api.sykes.pet/fact");
+      const response = await fetch("https://dogapi.dog/api/v2/facts"
+
+      );
 
       const data = await response.json();
 
-      setFact(data);
-      setLoading(false);  
-
-      useEffect(() => {
-        fetchData();
-      }, []);
+       setFact(data);
+       setFactCount((prev) => prev + 1);
+      setLoading(false); 
     };
-  }, []);
+
+
 
   return (
       <div className="app">
