@@ -45,7 +45,7 @@ npm run dev
 http://localhost:5173
 ```
 
-## Technical Challenge
+## Technical Challenge 
 
 One challenge encountered during development was preventing duplicate facts from being saved in the favorites list. Because the API can sometimes return the same fact more than once, users could accidentally save the same fact multiple times.
 
